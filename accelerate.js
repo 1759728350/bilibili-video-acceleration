@@ -27,6 +27,21 @@
                 }
             });
         }
+        if (e.key === 'h') {
+            const videos = document.querySelectorAll('video');
+
+            videos.forEach(function(video) {
+                if (isElementInViewport(video)) {
+                    if (video.playbackRate > 0.75) {
+                        video.playbackRate -= 0.25;
+                    } else {
+                        video.playbackRate = 2;
+                    }
+
+                    console.log('当前视频倍速：', video.playbackRate);
+                }
+            });
+        }
     });
 
     function isElementInViewport(el) {
